@@ -29,6 +29,7 @@ twitter.authenticate((err, token) => {
   }
 
   console.log('Got the token data', token.accessToken, token.accessTokenSecret, token.id_str);
+});
 ```
 
 ## License
