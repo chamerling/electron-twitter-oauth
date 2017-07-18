@@ -18,13 +18,13 @@ Then create a new Twitter application on [https://apps.twitter.com/app/new](http
 ``` js
 import {TwitterOAuth} from 'electron-twitter-oauth';
 
-const twitterAuthWindiw = new TwitterOAuth({
+const twitterAuthWindow = new TwitterOAuth({
   callbackURL,
   consumerKey,
   consumerSecret
 });
 
-twitter.authenticate((err, token) => {
+twitterAuthWindow.authenticate((err, token) => {
   if (err) {
     return console.log(err, err.stack);
   }
