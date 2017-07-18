@@ -1,7 +1,8 @@
 # electron-twitter-oauth
 
-Authenticate your user with OAuth on Twitter in your Electron.js application.
-This code is extracted and adapted to be reused from the Twitter auth part of the awesome [surfbirdapp/surfbird](https://github.com/surfbirdapp/surfbird) application.
+Authenticate your user with OAuth on Twitter in your Electron.js application. It will open a new `BrowserWindow` on Twitter authentication page, ask to authenticate then send you back the `access tokens` in the callback.
+
+Note: This code is extracted and adapted to be reused from the Twitter auth part of the awesome [surfbirdapp/surfbird](https://github.com/surfbirdapp/surfbird) application.
 
 ## Usage
 
@@ -28,7 +29,7 @@ twitter.authenticate((err, token) => {
     return console.log(err, err.stack);
   }
 
-  console.log('Got the token data', token.accessToken, token.accessTokenSecret, token.id_str);
+  console.log('Got the token data', token.accessTokenKey, token.accessTokenSecret, token.id_str);
 });
 ```
 

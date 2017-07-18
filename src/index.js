@@ -39,21 +39,20 @@ export class TwitterOAuth {
         if (matched) {
           e.preventDefault();
 
-          twitterAuth.getAccessToken(requestToken, requestTokenSecret, matched[2], (error, accessToken, accessTokenSecret) => {
+          twitterAuth.getAccessToken(requestToken, requestTokenSecret, matched[2], (error, accessTokenKey, accessTokenSecret) => {
             if (error) {
               return callback(new Error('Something went wrong while authenticating with Twitter: ' + error.data));
             }
 
             let token = {
-              service: 'twitter',
-              accessToken: accessToken,
+              accessTokenKey: accessTokenKey,
               accessTokenSecret: accessTokenSecret
             };
 
             const twit = new Twitter({
               consumer_key: self.credentials.consumerKey,
               consumer_secret: self.credentials.consumerSecret,
-              access_token_key: token.accessToken,
+              access_token_key: token.accessTokenKey,
               access_token_secret: token.accessTokenSecret
             });
 
